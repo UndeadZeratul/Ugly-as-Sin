@@ -72,7 +72,7 @@ class UaS_NeoEnglandMix : UaS_Consumable {
 	override void Messages() {
 		AddOpenText("Smells like the streets of New London.");
 		AddConsumeText("Feels... almost monopolistic."); 
-		AddConsomeText("Tastes strangely like tea.");
+		AddConsumeText("Tastes strangely like tea.");
 	}
 }
 
