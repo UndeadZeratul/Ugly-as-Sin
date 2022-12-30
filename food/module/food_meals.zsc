@@ -47,7 +47,7 @@ class UaS_SpaghettiMeatballMarinaraMRE : UaS_Consumable {
 	override void Messages() {
 		AddOpenText("Just like home... kinda.");
 		AddConsumeText("The sauce feels familiar enough.");
-		AddConsumeText("The meathballs are kind of smushy...");
+		AddConsumeText("The meatballs are kind of smushy...");
 		AddConsumeText("The noodles are well cooked at least.");
 	}
 }
