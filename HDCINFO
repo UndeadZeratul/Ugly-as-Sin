@@ -8,74 +8,74 @@ addSpawnTableSingleEntry => { "tableName": "DeadShotgunGuyReplaces", "name": "HD
 // TODO: Ammo Pouch Spawn Table Entries
 
 // Assault Pack: Assault Pack Spawn Table Entries
-newSpawnTable => { "spawnName": "HDBackpack", "tableName": "UaS.BackpackSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.BackpackSpawns", "name": "UaS_WildAssaultPack", "chance": "64", "replaces": "false" }
+newSpawnTable => { "spawnName": "HDBackpack", "tableName": "UaS.BackpackAssaultPackSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.BackpackAssaultPackSpawns", "name": "UaS_WildAssaultPack", "chance": "64", "replaces": "false" }
 
 // TODO: Consumable Spawn Table Entries
 
 // LLM: Laserlight Spawn Table Entries
-newSpawnTable => { "spawnName": "HDAmBox", "tableName": "UaS.AmmoBoxSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.AmmoBoxSpawns", "name": "UaS_LaserLightModule", "chance": "85", "replaces": "false" }
-newSpawnTable => { "spawnName": "HDBackpack", "tableName": "UaS.BackpackSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.BackpackSpawns", "name": "UaS_LaserLightModule", "chance": "85", "replaces": "false" }
-newSpawnTable => { "spawnName": "PortableLiteAmp", "tableName": "UaS.InfraredSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.InfraredSpawns", "name": "UaS_LaserLightModule", "chance": "85", "replaces": "false" }
+newSpawnTable => { "spawnName": "HDAmBox", "tableName": "UaS.AmmoBoxLLMSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.AmmoBoxLLMSpawns", "name": "UaS_LaserLightModule", "chance": "85", "replaces": "false" }
+newSpawnTable => { "spawnName": "HDBackpack", "tableName": "UaS.BackpackLLMSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.BackpackLLMSpawns", "name": "UaS_LaserLightModule", "chance": "85", "replaces": "false" }
+newSpawnTable => { "spawnName": "PortableLiteAmp", "tableName": "UaS.InfraredLLMSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.InfraredLLMSpawns", "name": "UaS_LaserLightModule", "chance": "85", "replaces": "false" }
 
 // Markers: Flare Spawn Table Entries
-newSpawnTable => { "spawnName": "HDAmBox", "tableName": "UaS.AmmoBoxSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.AmmoBoxSpawns", "name": "UaS_Flare", "chance": "51", "replaces": "false" }
-newSpawnTable => { "spawnName": "HDBackpack", "tableName": "UaS.BackpackSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.BackpackSpawns", "name": "UaS_Flare", "chance": "51", "replaces": "false" }
-newSpawnTable => { "spawnName": "PortableMedikit", "tableName": "UaS.MedikitSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.MedikitSpawns", "name": "UaS_Flare", "chance": "51", "replaces": "false" }
-newSpawnTable => { "spawnName": "PortableStimpack", "tableName": "UaS.StimpackSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.StimpackSpawns", "name": "UaS_Flare", "chance": "51", "replaces": "false" }
+newSpawnTable => { "spawnName": "HDAmBox", "tableName": "UaS.AmmoBoxFlareSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.AmmoBoxFlareSpawns", "name": "UaS_Flare", "chance": "51", "replaces": "false" }
+newSpawnTable => { "spawnName": "HDBackpack", "tableName": "UaS.BackpackFlareSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.BackpackFlareSpawns", "name": "UaS_Flare", "chance": "51", "replaces": "false" }
+newSpawnTable => { "spawnName": "PortableMedikit", "tableName": "UaS.MedikitFlareSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.MedikitFlareSpawns", "name": "UaS_Flare", "chance": "51", "replaces": "false" }
+newSpawnTable => { "spawnName": "PortableStimpack", "tableName": "UaS.StimpackFlareSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.StimpackFlareSpawns", "name": "UaS_Flare", "chance": "51", "replaces": "false" }
 
 // Markers: Glowstick Spawn Table Entries
-newSpawnTable => { "spawnName": "HDAmBox", "tableName": "UaS.AmmoBoxSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.AmmoBoxSpawns", "name": "UaS_Glowstick", "chance": "51", "replaces": "false" }
-newSpawnTable => { "spawnName": "HDBackpack", "tableName": "UaS.BackpackSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.BackpackSpawns", "name": "UaS_Glowstick", "chance": "51", "replaces": "false" }
-newSpawnTable => { "spawnName": "PortableMedikit", "tableName": "UaS.MedikitSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.MedikitSpawns", "name": "UaS_Glowstick", "chance": "51", "replaces": "false" }
-newSpawnTable => { "spawnName": "PortableStimpack", "tableName": "UaS.StimpackSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.StimpackSpawns", "name": "UaS_Glowstick", "chance": "51", "replaces": "false" }
+newSpawnTable => { "spawnName": "HDAmBox", "tableName": "UaS.AmmoBoxGlowstickSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.AmmoBoxGlowstickSpawns", "name": "UaS_Glowstick", "chance": "51", "replaces": "false" }
+newSpawnTable => { "spawnName": "HDBackpack", "tableName": "UaS.BackpackGlowstickSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.BackpackGlowstickSpawns", "name": "UaS_Glowstick", "chance": "51", "replaces": "false" }
+newSpawnTable => { "spawnName": "PortableMedikit", "tableName": "UaS.MedikitGlowstickSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.MedikitGlowstickSpawns", "name": "UaS_Glowstick", "chance": "51", "replaces": "false" }
+newSpawnTable => { "spawnName": "PortableStimpack", "tableName": "UaS.StimpackGlowstickSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.StimpackGlowstickSpawns", "name": "UaS_Glowstick", "chance": "51", "replaces": "false" }
 
 // Medical: Trauma Kit Spawn Table Entries
-newSpawnTable => { "spawnName": "HDAmBox", "tableName": "UaS.AmmoBoxSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.AmmoBoxSpawns", "name": "UaS_TraumaKit", "chance": "51", "replaces": "false" }
-newSpawnTable => { "spawnName": "HDBackpack", "tableName": "UaS.BackpackSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.BackpackSpawns", "name": "UaS_TraumaKit", "chance": "51", "replaces": "false" }
-newSpawnTable => { "spawnName": "PortableMedikit", "tableName": "UaS.MedikitSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.MedikitSpawns", "name": "UaS_TraumaKit", "chance": "51", "replaces": "false" }
-newSpawnTable => { "spawnName": "PortableStimpack", "tableName": "UaS.StimpackSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.StimpackSpawns", "name": "UaS_TraumaKit", "chance": "51", "replaces": "false" }
+newSpawnTable => { "spawnName": "HDAmBox", "tableName": "UaS.AmmoBoxTraumaKitSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.AmmoBoxTraumaKitSpawns", "name": "UaS_TraumaKit", "chance": "51", "replaces": "false" }
+newSpawnTable => { "spawnName": "HDBackpack", "tableName": "UaS.BackpackTraumaKitSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.BackpackTraumaKitSpawns", "name": "UaS_TraumaKit", "chance": "51", "replaces": "false" }
+newSpawnTable => { "spawnName": "PortableMedikit", "tableName": "UaS.MedikitTraumaKitSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.MedikitTraumaKitSpawns", "name": "UaS_TraumaKit", "chance": "51", "replaces": "false" }
+newSpawnTable => { "spawnName": "PortableStimpack", "tableName": "UaS.StimpackTraumaKitSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.StimpackTraumaKitSpawns", "name": "UaS_TraumaKit", "chance": "51", "replaces": "false" }
 
 // Stabilizer: Sling & Gyro Stabilizer Spawn Table Entries
 newSpawnTable => { "spawnName": "StabilizerRandom" }
 addSpawnTableSingleEntry => { "tableName": "StabilizerRandom", "name": "UaS_GyroStabilizer", "weight": "1" }
 addSpawnTableSingleEntry => { "tableName": "StabilizerRandom", "name": "UaS_WeaponSling", "weight": "#UaS_OldSling" }
 
-newSpawnTable => { "spawnName": "HDSMG", "tableName": "UaS.SMGSpawns", "replaces": "false" }
-addSpawnTableNestedEntry => { "tableName": "UaS.SMGSpawns", "name": "StabilizerRandom", "chance": "13", "replaces": "false" }
-newSpawnTable => { "spawnName": "Hunter", "tableName": "UaS.HunterSpawns", "replaces": "false" }
-addSpawnTableNestedEntry => { "tableName": "UaS.HunterSpawns", "name": "StabilizerRandom", "chance": "13", "replaces": "false" }
-newSpawnTable => { "spawnName": "Slayer", "tableName": "UaS.SlayerSpawns", "replaces": "false" }
-addSpawnTableNestedEntry => { "tableName": "UaS.SlayerSpawns", "name": "StabilizerRandom", "chance": "13", "replaces": "false" }
-newSpawnTable => { "spawnName": "ZM66AssaultRifle", "tableName": "UaS.ZM66Spawns", "replaces": "false" }
-addSpawnTableNestedEntry => { "tableName": "UaS.ZM66Spawns", "name": "StabilizerRandom", "chance": "13", "replaces": "false" }
-newSpawnTable => { "spawnName": "ZM66Semi", "tableName": "UaS.ZM66SemiSpawns", "replaces": "false" }
-addSpawnTableNestedEntry => { "tableName": "UaS.ZM66SemiSpawns", "name": "StabilizerRandom", "chance": "13", "replaces": "false" }
-newSpawnTable => { "spawnName": "ZM66Regular", "tableName": "UaS.ZM66RegularSpawns", "replaces": "false" }
-addSpawnTableNestedEntry => { "tableName": "UaS.ZM66RegularSpawns", "name": "StabilizerRandom", "chance": "13", "replaces": "false" }
-newSpawnTable => { "spawnName": "Vulcanette", "tableName": "UaS.VulcanetteSpawns", "replaces": "false" }
-addSpawnTableNestedEntry => { "tableName": "UaS.VulcanetteSpawns", "name": "StabilizerRandom", "chance": "13", "replaces": "false" }
-newSpawnTable => { "spawnName": "LiberatorRifle", "tableName": "UaS.LiberatorSpawns", "replaces": "false" }
-addSpawnTableNestedEntry => { "tableName": "UaS.LiberatorSpawns", "name": "StabilizerRandom", "chance": "13", "replaces": "false" }
-newSpawnTable => { "spawnName": "LiberatorNoGL", "tableName": "UaS.LiberatorNoGLSpawns", "replaces": "false" }
-addSpawnTableNestedEntry => { "tableName": "UaS.LiberatorNoGLSpawns", "name": "StabilizerRandom", "chance": "13", "replaces": "false" }
-newSpawnTable => { "spawnName": "BossRifle", "tableName": "UaS.BossRifleSpawns", "replaces": "false" }
-addSpawnTableNestedEntry => { "tableName": "UaS.BossRifleSpawns", "name": "StabilizerRandom", "chance": "13", "replaces": "false" }
+newSpawnTable => { "spawnName": "HDSMG", "tableName": "UaS.SMGStabilizerSpawns", "replaces": "false" }
+addSpawnTableNestedEntry => { "tableName": "UaS.SMGStabilizerSpawns", "name": "StabilizerRandom", "chance": "13", "replaces": "false" }
+newSpawnTable => { "spawnName": "Hunter", "tableName": "UaS.HunterStabilizerSpawns", "replaces": "false" }
+addSpawnTableNestedEntry => { "tableName": "UaS.HunterStabilizerSpawns", "name": "StabilizerRandom", "chance": "13", "replaces": "false" }
+newSpawnTable => { "spawnName": "Slayer", "tableName": "UaS.SlayerStabilizerSpawns", "replaces": "false" }
+addSpawnTableNestedEntry => { "tableName": "UaS.SlayerStabilizerSpawns", "name": "StabilizerRandom", "chance": "13", "replaces": "false" }
+newSpawnTable => { "spawnName": "ZM66AssaultRifle", "tableName": "UaS.ZM66StabilizerSpawns", "replaces": "false" }
+addSpawnTableNestedEntry => { "tableName": "UaS.ZM66StabilizerSpawns", "name": "StabilizerRandom", "chance": "13", "replaces": "false" }
+newSpawnTable => { "spawnName": "ZM66Semi", "tableName": "UaS.ZM66SemiStabilizerSpawns", "replaces": "false" }
+addSpawnTableNestedEntry => { "tableName": "UaS.ZM66SemiStabilizerSpawns", "name": "StabilizerRandom", "chance": "13", "replaces": "false" }
+newSpawnTable => { "spawnName": "ZM66Regular", "tableName": "UaS.ZM66RegularStabilizerSpawns", "replaces": "false" }
+addSpawnTableNestedEntry => { "tableName": "UaS.ZM66RegularStabilizerSpawns", "name": "StabilizerRandom", "chance": "13", "replaces": "false" }
+newSpawnTable => { "spawnName": "Vulcanette", "tableName": "UaS.VulcanetteStabilizerSpawns", "replaces": "false" }
+addSpawnTableNestedEntry => { "tableName": "UaS.VulcanetteStabilizerSpawns", "name": "StabilizerRandom", "chance": "13", "replaces": "false" }
+newSpawnTable => { "spawnName": "LiberatorRifle", "tableName": "UaS.LiberatorStabilizerSpawns", "replaces": "false" }
+addSpawnTableNestedEntry => { "tableName": "UaS.LiberatorStabilizerSpawns", "name": "StabilizerRandom", "chance": "13", "replaces": "false" }
+newSpawnTable => { "spawnName": "LiberatorNoGL", "tableName": "UaS.LiberatorNoGLStabilizerSpawns", "replaces": "false" }
+addSpawnTableNestedEntry => { "tableName": "UaS.LiberatorNoGLStabilizerSpawns", "name": "StabilizerRandom", "chance": "13", "replaces": "false" }
+newSpawnTable => { "spawnName": "BossRifle", "tableName": "UaS.BossRifleStabilizerSpawns", "replaces": "false" }
+addSpawnTableNestedEntry => { "tableName": "UaS.BossRifleStabilizerSpawns", "name": "StabilizerRandom", "chance": "13", "replaces": "false" }
 
 // AI: Flashlight Classes
 addFlashlightBotClass => { "name": "HERPBot" }

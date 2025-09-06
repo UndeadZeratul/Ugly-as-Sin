@@ -1,22 +1,22 @@
 // Flare Spawn Table Entries
-newSpawnTable => { "spawnName": "HDAmBox", "tableName": "UaS.AmmoBoxSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.AmmoBoxSpawns", "name": "UaS_Flare", "chance": "51", "replaces": "false" }
-newSpawnTable => { "spawnName": "HDBackpack", "tableName": "UaS.BackpackSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.BackpackSpawns", "name": "UaS_Flare", "chance": "51", "replaces": "false" }
-newSpawnTable => { "spawnName": "PortableMedikit", "tableName": "UaS.MedikitSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.MedikitSpawns", "name": "UaS_Flare", "chance": "51", "replaces": "false" }
-newSpawnTable => { "spawnName": "PortableStimpack", "tableName": "UaS.StimpackSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.StimpackSpawns", "name": "UaS_Flare", "chance": "51", "replaces": "false" }
+newSpawnTable => { "spawnName": "HDAmBox", "tableName": "UaS.AmmoBoxFlareSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.AmmoBoxFlareSpawns", "name": "UaS_Flare", "chance": "51", "replaces": "false" }
+newSpawnTable => { "spawnName": "HDBackpack", "tableName": "UaS.BackpackFlareSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.BackpackFlareSpawns", "name": "UaS_Flare", "chance": "51", "replaces": "false" }
+newSpawnTable => { "spawnName": "PortableMedikit", "tableName": "UaS.MedikitFlareSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.MedikitFlareSpawns", "name": "UaS_Flare", "chance": "51", "replaces": "false" }
+newSpawnTable => { "spawnName": "PortableStimpack", "tableName": "UaS.StimpackFlareSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.StimpackFlareSpawns", "name": "UaS_Flare", "chance": "51", "replaces": "false" }
 
 // Glowstick Spawn Table Entries
-newSpawnTable => { "spawnName": "HDAmBox", "tableName": "UaS.AmmoBoxSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.AmmoBoxSpawns", "name": "UaS_Glowstick", "chance": "51", "replaces": "false" }
-newSpawnTable => { "spawnName": "HDBackpack", "tableName": "UaS.BackpackSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.BackpackSpawns", "name": "UaS_Glowstick", "chance": "51", "replaces": "false" }
-newSpawnTable => { "spawnName": "PortableMedikit", "tableName": "UaS.MedikitSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.MedikitSpawns", "name": "UaS_Glowstick", "chance": "51", "replaces": "false" }
-newSpawnTable => { "spawnName": "PortableStimpack", "tableName": "UaS.StimpackSpawns", "replaces": "false" }
-addSpawnTableSingleEntry => { "tableName": "UaS.StimpackSpawns", "name": "UaS_Glowstick", "chance": "51", "replaces": "false" }
+newSpawnTable => { "spawnName": "HDAmBox", "tableName": "UaS.AmmoBoxGlowstickSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.AmmoBoxGlowstickSpawns", "name": "UaS_Glowstick", "chance": "51", "replaces": "false" }
+newSpawnTable => { "spawnName": "HDBackpack", "tableName": "UaS.BackpackGlowstickSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.BackpackGlowstickSpawns", "name": "UaS_Glowstick", "chance": "51", "replaces": "false" }
+newSpawnTable => { "spawnName": "PortableMedikit", "tableName": "UaS.MedikitGlowstickSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.MedikitGlowstickSpawns", "name": "UaS_Glowstick", "chance": "51", "replaces": "false" }
+newSpawnTable => { "spawnName": "PortableStimpack", "tableName": "UaS.StimpackGlowstickSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.StimpackGlowstickSpawns", "name": "UaS_Glowstick", "chance": "51", "replaces": "false" }
 
 // Merchant Store Entries
 newMerchantStoreItem => { "enabled": "#hdm_enable_uasflares", "type": "item", "category": "$MERCH_CAT_UASFLARES", "item": "UaS_Flare", "icon": "UGSFA0", "displayName": "$MERCH_TAG_UASFLARES", "basePrice": "1", "flavorText": "$MERCH_FLAVOR_UASFLARES" }
