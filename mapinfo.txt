@@ -14,7 +14,6 @@ GameInfo {
 	AddEventHandlers = "UaS_DeathFade_Bootstrap"
 	AddEventHandlers = "UaS_CurseTweaker"
 	AddEventHandlers = "UaS_BindsHandler"
-	AddEventHandlers = "UaS_AmmoPouchSpawner"
 	AddEventHandlers = "UaS_AimTweaks_Bootstrap"
 	AddEventHandlers = "UaS_AI_Bootstrap"
 	AddEventHandlers = "UaS_2F_Bootstrap"
