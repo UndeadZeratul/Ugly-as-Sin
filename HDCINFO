@@ -5,7 +5,13 @@ addSpawnTableSingleEntry => { "tableName": "GibbedMarineExtraReplaces", "name": 
 addSpawnTableSingleEntry => { "tableName": "DeadZombieManReplaces", "name": "HDOperator", "weight": "#UaS_AllySpawnRate" }
 addSpawnTableSingleEntry => { "tableName": "DeadShotgunGuyReplaces", "name": "HDOperator", "weight": "#UaS_AllySpawnRate" }
 
-// TODO: Ammo Pouch Spawn Table Entries
+// Ammo Pouch: Ammo Pouch Spawn Table Entries
+newSpawnTable => { "spawnName": "HDAmBox", "tableName": "UaS.AmmoBoxAmmoPouchSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.AmmoBoxAmmoPouchSpawns", "name": "UaS_WildAmmoPouch", "chance": "@Clamp", "chance.value": "@Subtract", "chance.value.valueA": "@Add", "chance.value.valueA.valueA": "13", "chance.value.valueA.valueB": "@Multiply", "chance.value.valueA.valueB.valueA": "13", "chance.value.valueA.valueB.valueB": "@MapStat", "chance.value.valueA.valueB.valueB.key": "UaS_WildAmmoPouch.spawn.fail", "chance.value.valueB": "@Multiply", "chance.value.valueB.valueA": "128", "chance.value.valueB.valueB": "@MapStat", "chance.value.valueB.valueB.key": "UaS_WildAmmoPouch.spawn.success", "chance.min": "0", "chance.max": "255", "replaces": "false" }
+newSpawnTable => { "spawnName": "DeadRifleman", "tableName": "UaS.DeadRiflemanAmmoPouchSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.DeadRiflemanAmmoPouchSpawns", "name": "UaS_WildAmmoPouch", "chance": "@Clamp", "chance.value": "@Subtract", "chance.value.valueA": "@Add", "chance.value.valueA.valueA": "13", "chance.value.valueA.valueB": "@Multiply", "chance.value.valueA.valueB.valueA": "13", "chance.value.valueA.valueB.valueB": "@MapStat", "chance.value.valueA.valueB.valueB.key": "UaS_WildAmmoPouch.spawn.fail", "chance.value.valueB": "@Multiply", "chance.value.valueB.valueA": "128", "chance.value.valueB.valueB": "@MapStat", "chance.value.valueB.valueB.key": "UaS_WildAmmoPouch.spawn.success", "chance.min": "0", "chance.max": "255", "replaces": "false" }
+newSpawnTable => { "spawnName": "ReallyDeadRifleman", "tableName": "UaS.ReallyDeadRiflemanAmmoPouchSpawns", "replaces": "false" }
+addSpawnTableSingleEntry => { "tableName": "UaS.ReallyDeadRiflemanAmmoPouchSpawns", "name": "UaS_WildAmmoPouch", "chance": "@Clamp", "chance.value": "@Subtract", "chance.value.valueA": "@Add", "chance.value.valueA.valueA": "13", "chance.value.valueA.valueB": "@Multiply", "chance.value.valueA.valueB.valueA": "13", "chance.value.valueA.valueB.valueB": "@MapStat", "chance.value.valueA.valueB.valueB.key": "UaS_WildAmmoPouch.spawn.fail", "chance.value.valueB": "@Multiply", "chance.value.valueB.valueA": "128", "chance.value.valueB.valueB": "@MapStat", "chance.value.valueB.valueB.key": "UaS_WildAmmoPouch.spawn.success", "chance.min": "0", "chance.max": "255", "replaces": "false" }
 
 // Assault Pack: Assault Pack Spawn Table Entries
 newSpawnTable => { "spawnName": "HDBackpack", "tableName": "UaS.BackpackAssaultPackSpawns", "replaces": "false" }
