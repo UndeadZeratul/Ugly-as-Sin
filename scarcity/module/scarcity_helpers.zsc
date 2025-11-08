@@ -1,8 +1,12 @@
 extend class UaS_Scarcity_Handler {
 	//Generic function for breaking/replacing map-spawned armours
 	void ArmourReplacer(name ArmourName, int DurabilityMin, int DurabilityMax, actor spawnPointer) {
+		HDCore.log('UaS.ScarcityHandler', LOGGING_DEBUG, "Replacing Armour '"..ArmourName.."' with Durability between ("..DurabilityMin..", "..DurabilityMax.."), Overspawn of "..UaS_ScarcityOverspawn);
+
 		DurabilityMax = HDGMGlobalMaths.lerpDouble(DurabilityMin, DurabilityMax, UaS_ScarcityOverspawn); //Possible spawn at least *some* durability, based on overspawn
 		int durability = random(DurabilityMin, DurabilityMax); //Pick a number up to maxdurability
+
+		HDCore.log('UaS.ScarcityHandler', LOGGING_DEBUG, "Durability of "..durability);
 
 		//If there's any durability left and the overspawn chance succeeds, spawn a damaged armour
 		if (durability > DurabilityMin && UaS.RandomChance(UaS_ScarcityOverspawn)) HDMagAmmo.SpawnMag(spawnPointer, ArmourName, durability);
@@ -10,10 +14,14 @@ extend class UaS_Scarcity_Handler {
 
 	//Generic function for breaking/replacing map-spawned magazines
 	void MagReplacer(name MagName, name ammoName, int MagCap, actor spawnPointer) {
+		HDCore.log('UaS.ScarcityHandler', LOGGING_DEBUG, "Replacing Mag '"..MagName.."' filled with up to "..MagCap.."x "..ammoName.." rounds, Overspawn of "..UaS_ScarcityOverspawn);
+
 		int rounds, packed;
 
 		MagCap = int(MagCap * UaS_ScarcityOverspawn); //Possible spawn at least *some* ammo, based on overspawn
 		rounds = random(0, MagCap); //Pick a number up to cap
+
+		HDCore.log('UaS.ScarcityHandler', LOGGING_DEBUG, rounds.."x "..ammoName.." rounds");
 
 		//Pack some in a mag, or no mag at all
 		if (UaS.RandomChance(UaS_ScarcityOverspawn)) {
@@ -28,6 +36,8 @@ extend class UaS_Scarcity_Handler {
 
 	//Generic function for reducing amount in map-spawned ammo boxes, without removal since boxes are already rare
 	void BoxReplacer(name BoxName, name ammoName, int BoxCap, actor spawnPointer) {
+		HDCore.log('UaS.ScarcityHandler', LOGGING_DEBUG, "Replacing Ammo Box '"..BoxName.."' filled with up to "..BoxCap.."x "..ammoName.." rounds, Overspawn of "..UaS_ScarcityOverspawn);
+
 		int rounds, packed;
 
 		BoxCap = int(BoxCap * UaS_ScarcityOverspawn); //Possible spawn at least *some* ammo, based on overspawn
@@ -40,6 +50,8 @@ extend class UaS_Scarcity_Handler {
 			let spawnedBox = hdupk(actor.Spawn(BoxName, spawnPointer.pos));
 			hdupk(spawnedBox).amount = packed;
 		}
+
+		HDCore.log('UaS.ScarcityHandler', LOGGING_DEBUG, rounds.."x "..ammoName.." rounds");
 
 		//spill the rest on the ground
 		if (ammoName != 'None') UaS.SpawnStuff(ammoName, rounds, spawnPointer.pos);
