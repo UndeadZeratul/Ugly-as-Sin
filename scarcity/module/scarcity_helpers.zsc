@@ -1,7 +1,7 @@
 extend class UaS_Scarcity_Handler {
 	//Generic function for breaking/replacing map-spawned armours
 	void ArmourReplacer(name ArmourName, int DurabilityMin, int DurabilityMax, actor spawnPointer) {
-		DurabilityMax = int(DurabilityMax * UaS_ScarcityOverspawn); //Possible spawn at least *some* durability, based on overspawn
+		DurabilityMax = HDGMGlobalMaths.lerpDouble(DurabilityMin, DurabilityMax, UaS_ScarcityOverspawn); //Possible spawn at least *some* durability, based on overspawn
 		int durability = random(DurabilityMin, DurabilityMax); //Pick a number up to maxdurability
 
 		//If there's any durability left and the overspawn chance succeeds, spawn a damaged armour
