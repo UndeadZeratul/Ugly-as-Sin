@@ -1,6 +1,8 @@
 extend class UaS {
 	//Generic function for spawning some bundle of things, like loose rounds
 	static play Actor SpawnStuff(name toSpawn, int count, vector3 pos, bool randomvel = true) {
+		HDCore.log('Ugly as Sin', LOGGING_WARN, "UaS.SpawnStuff() is deprecated, contact developer to update!");
+
 		Actor lastspawned;
 		if(count <= 0) { return null; }
 		for(int i = 1; i <= count; i++) {
