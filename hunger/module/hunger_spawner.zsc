@@ -93,7 +93,7 @@ class UaS_Food_Spawner : EventHandler {
 
 	void MaybeSpawnRation(name spawnClass, double spawnChance) {
 		if(UaS.RandomChance(clamp(spawnChance, 0, 1))) {
-			UaS.SpawnStuff(spawnClass, 1, spawnPos);
+			HDCore.SpawnStuff(spawnClass, spawnPos);
 			UaS.LogDebug(DBG_Hunger, "Spawned Ration.");
 		}
 	}

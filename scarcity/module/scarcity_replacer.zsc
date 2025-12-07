@@ -72,24 +72,24 @@ extend class UaS_Scarcity_Handler {
 		}
 		else if (shellClass) {
 			dbgActuallyHandled = true;
-			UaS.SpawnStuff('HDFumblingShell', random(0, int(4 * UaS_ScarcityOverspawn)), mo.pos, true);
+			HDCore.SpawnStuff('HDFumblingShell', mo.pos, random(0, int(4 * UaS_ScarcityOverspawn)));
 			mo.Destroy();
 		}
 		else if (mo is 'RocketBigPickup') {
 			dbgActuallyHandled = true;
 			for(int i = 1; i <= 5; i++) {
 				if(UaS.RandomChance(UaS_ScarcityOverspawn)) {
-					if(UaS.RandomChance(0.5)) { UaS.SpawnStuff('HDRocketAmmo', random(0, 1), mo.pos); }
-					else { UaS.SpawnStuff('DudRocket', random(0, 1), mo.pos); }
+					if(UaS.RandomChance(0.5)) { HDCore.SpawnStuff('HDRocketAmmo', mo.pos, random(0, 1)); }
+					else { HDCore.SpawnStuff('DudRocket', mo.pos, random(0, 1)); }
 				}
 			}
-			UaS.SpawnStuff('UaS_EmptyRocketBox', 1, mo.pos);
+			HDCore.SpawnStuff('UaS_EmptyRocketBox', mo.pos);
 			mo.Destroy();
 		}
 		else if (mo is 'FragP' || mo is 'HDFragGrenadeAmmo') {
 			dbgActuallyHandled = true;
-			if(UaS.RandomChance(UaS_ScarcityOverspawn)) { UaS.SpawnStuff('FragP', random(0, 1), mo.pos); }
-			else { UaS.SpawnStuff('HDFragSpoon', random(0, 1), mo.pos); }
+			if(UaS.RandomChance(UaS_ScarcityOverspawn)) { HDCore.SpawnStuff('FragP', mo.pos, random(0, 1)); }
+			else { HDCore.SpawnStuff('HDFragSpoon', mo.pos, random(0, 1)); }
 			mo.Destroy();
 		}
 
