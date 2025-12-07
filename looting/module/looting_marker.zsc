@@ -74,7 +74,7 @@ class UaS_SearchedCorpseMarker : Inventory {
 	// For any other non-Inventory loot items
 	bool TrySpawnLoot(string item) {
 		if (item~=="") { return false; }
-		Actor spawned = UaS.SpawnStuff(item, 1, owner.pos, true);
+		Actor spawned = HDCore.SpawnStuff(item, owner.pos);
 		if (spawned) {
 			UaS.LogDebug(DBG_Looting, string.format("TrySpawnLoot() dropped "..spawned.GetClassName()));
 			foundItems++;

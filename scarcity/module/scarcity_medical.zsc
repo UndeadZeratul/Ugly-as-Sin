@@ -17,15 +17,15 @@ extend class UaS_Scarcity_Handler {
 			case 'PortableStimpack':
 				if(MedSpawnCheck()) { dbgOverspawned=true; }
 				else {
-					UaS.SpawnStuff('SpentStim', random(0, 1), mo.pos);
-					UaS.SpawnStuff('UaS_EmptyStimpack', 1, mo.pos);
+					HDCore.SpawnStuff('SpentStim', mo.pos, random(0, 1));
+					HDCore.SpawnStuff('UaS_EmptyStimpack', mo.pos);
 					mo.destroy();
 				}
 				break;
 			case 'PortableMedikit': 
 				// break open bonus contents
-				if(UaS.RandomChance(UaS_ScarcityOverspawn)) { UaS.SpawnStuff('PortableStimpack', 1, mo.pos); }
-				if(UaS.RandomChance(UaS_ScarcityOverspawn)) { UaS.SpawnStuff('SecondBlood', 1, mo.pos); }
+				if(UaS.RandomChance(UaS_ScarcityOverspawn)) { HDCore.SpawnStuff('PortableStimpack', mo.pos); }
+				if(UaS.RandomChance(UaS_ScarcityOverspawn)) { HDCore.SpawnStuff('SecondBlood', mo.pos); }
 				// handle autoinjector
 				if(MedSpawnCheck()) {
 					dbgOverspawned=true;
@@ -36,16 +36,16 @@ extend class UaS_Scarcity_Handler {
 					int kitmodules = max(1, random(1, maxmodules));
 					spawnedMedikit.weaponstatus[MEDS_SECONDFLESH] = 7 * kitmodules;
 					if(spawnedMedikit.weaponstatus[MEDS_SECONDFLESH] < MEDIKIT_MAXFLESH) { spawnedMedikit.frame = 2; }
-					if(UaS.RandomChance(UaS_ScarcityOverspawn)) { UaS.SpawnStuff('UaS_2FCartridge', 1, mo.pos); }
+					if(UaS.RandomChance(UaS_ScarcityOverspawn)) { HDCore.SpawnStuff('UaS_2FCartridge', mo.pos); }
 				}
-				UaS.SpawnStuff('UaS_EmptyMedikit', 1, mo.pos);
+				HDCore.SpawnStuff('UaS_EmptyMedikit', mo.pos);
 				mo.destroy();
 				break;
 			case 'PortableBerserkPack':
 				if(MedSpawnCheck()) { dbgOverspawned=true; }
 				else {
-					UaS.SpawnStuff('SpentZerk', random(0, 1), mo.pos);
-					UaS.SpawnStuff('UaS_EmptyZerkpack', 1, mo.pos);
+					HDCore.SpawnStuff('SpentZerk', mo.pos, random(0, 1));
+					HDCore.SpawnStuff('UaS_EmptyZerkpack', mo.pos);
 					mo.destroy();
 				}
 				break;
