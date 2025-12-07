@@ -31,7 +31,7 @@ extend class UaS_Scarcity_Handler {
 		}
 
 		//spill the rest on the ground
-		if (ammoName != 'None') UaS.SpawnStuff(ammoName, rounds, spawnPointer.pos);
+		if (ammoName != 'None') HDCore.SpawnStuff(ammoName, spawnPointer.pos, rounds);
 	}
 
 	//Generic function for reducing amount in map-spawned ammo boxes, without removal since boxes are already rare
@@ -54,6 +54,6 @@ extend class UaS_Scarcity_Handler {
 		HDCore.log('UaS.ScarcityHandler', LOGGING_DEBUG, rounds.."x "..ammoName.." rounds");
 
 		//spill the rest on the ground
-		if (ammoName != 'None') UaS.SpawnStuff(ammoName, rounds, spawnPointer.pos);
+		if (ammoName != 'None') HDCore.SpawnStuff(ammoName, spawnPointer.pos, rounds);
 	}
 }
