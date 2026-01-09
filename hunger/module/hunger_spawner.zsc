@@ -55,7 +55,7 @@ class UaS_Food_Spawner : EventHandler {
 	vector3 spawnPos;
 
 	override void WorldThingSpawned(WorldEvent e) {
-		if(level.maptime > 1) { return; }
+		if(!HDCore.isPreSpawn()) { return; }
 		if(!e.Thing) { return; }
 		if(e.Thing is "Inventory" && Inventory(e.Thing).Owner) { return; }
 
