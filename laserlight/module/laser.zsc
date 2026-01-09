@@ -301,9 +301,11 @@ class UaS_LaserLightModule : HDWeapon {
 			return;
 		}
 
-		FLineTraceData flTrace;
-		emitter.LineTrace(emitter.angle, 512, emitter.pitch, TRF_THRUACTORS, data: flTrace);
-		emitter.Activate(self); // turn on dynlight
+		// FLineTraceData flTrace;
+		// emitter.LineTrace(emitter.angle, 512, emitter.pitch, TRF_THRUACTORS, data: flTrace);
+
+		// turn on dynlight
+		emitter.Activate(self);
 
 		//Bounce Light
 		// if (!fbounce && owner is 'HDPlayerPawn') { fbounce = UaS_LLM_BounceLight(actor.spawn("UaS_LLM_BounceLight", flTrace.HitLocation, false)); }
@@ -317,57 +319,15 @@ class UaS_LaserLightModule : HDWeapon {
 		// Draw flashlight particle beam
 		if (!beams) { beams = CVar.GetCVar("UaS_FlashlightParticles", players[consoleplayer]); }
 		if (beams.GetBool() == false || (ShowIR && owner == players[consoleplayer].mo)) { return; }
-		int start = 1; //particle beam starts at emitter
-		// if(owner.CheckLocalView()) { start = 8; } // unless local player
-		if(owner is "DERPBot") { start = 4; } // Reduce beams on DERPs
 
-		double startalpha = 0.75;
-		if(owner.CheckLocalView()) { startalpha = .2; } // unless local player
-
-		// Old angular vector of particle spawn
-		vector3 oldpvec = (
-			cos(lastpitch) * cos(lastangle),
-			cos(lastpitch) * sin(lastangle),
-			sin(-lastpitch));
-		// New angular vector of particle spawn
-		vector3 newpvec = (
-			cos(emitter.pitch) * cos(emitter.angle),
-			cos(emitter.pitch) * sin(emitter.angle),
-			sin(-emitter.pitch));
-		// Vector offset between old and new positions
-		vector3 pold = level.vec3diff(emitter.pos, lastpos);
-		// Velocity offset between old and new angular vectors
-		vector3 pvoff = level.vec3diff(oldpvec,newpvec);
-
-		FP.Style = Style_Add;
-		FP.Color1 = "White";
-		FP.Flags = SPF_FULLBRIGHT;
-		FP.Lifetime = 1;
-		FP.SizeStep = 0;
-		FP.FadeStep = -1;
-		FP.Texture = TexMan.CheckForTexture ("glstuff/glpart.png");
-		for (double d = start; d < min(flTrace.distance,64); d = d + (d / 4)) {
-			FP.Pos = emitter.pos + (oldpvec * d) + pold;
-			FP.Vel = (pvoff * d) - pold;
-			FP.StartAlpha = (startalpha*0.75) / (d);
-			FP.Size = (sin(emitter.SpotOuterAngle) * d) * 6;
-			Level.SpawnParticle(FP);
-			// tighter "beam" particle as well
-			FP.StartAlpha = (startalpha) / (d);
-			FP.Size = (sin(emitter.SpotInnerAngle*0.5) * d) * 8;
-			Level.SpawnParticle(FP);
-		}
-
+		HDCore.emitFlashlightParticles(
+			emitter,
+			startOffset: (owner is 'DERPBot') ? 4.0 : 1.0,
+			alpha: owner.CheckLocalView() ? 0.2 : 0.75
+		);
 	}
 
 	void Laser(int mode) {
-		LP.Style = STYLE_Add;
-		LP.Color1 = LaserColor;
-		LP.Lifetime = 1;
-		LP.SizeStep = 0;
-		LP.FadeStep = -1;
-		LP.Flags = SPF_FULLBRIGHT|SPF_REPLACE;
-		LP.Texture = TexMan.CheckForTexture ("glstuff/glpart.png");
 
 		switch (mode) {
 			case 0: if(lbounce) { lbounce.Destroy(); } return; break;
@@ -375,80 +335,16 @@ class UaS_LaserLightModule : HDWeapon {
 			case 2: LaserAlpha = 0.0; break;
 		}
 
-		// Enemies use red lasers
-		// Friends use green lasers
-		if (owner.bISMONSTER) {
-			if (!owner.bFRIENDLY) { LP.Color1 = "FF 00 00"; }
-			else { LP.Color1 = "50 FF 00"; }
-		}
-
-		// Make laser particles larger for players wearing NVGs, and IR lasers visible
-		double sizefactor = 1;
-		if (owner is 'HDPlayerPawn') { sizefactor = 0.5; }
-		if (players[consoleplayer].mo.checklocalview()) {
-			PlayerPawn plr = players[consoleplayer].mo;
-			PortableLiteAmp nvg = PortableLiteAmp(plr.FindInventory("PortableLiteAmp"));
-			if (nvg && nvg.worn) {
-				//sizefactor *= clamp(nvg.amplitude * 0.1, 1, 3);
-				if (nvg.amplitude > 0) { LaserAlpha = 1.0; }
-			}
-		}
-
 		// Trace path data for laser particle beam
 		FLineTraceData laserTrace;
 		emitter.LineTrace(emitter.angle, 16384, emitter.pitch, offsetforward:8, data: laserTrace);
 		if (laserTrace.distance<1) { emitter.LineTrace(emitter.angle, 16384, emitter.pitch, flags: TRF_THRUACTORS, offsetforward:8, data: laserTrace); }
 
-		// precalculate position and velocity vectors only once
-		// hopefully moving these out of the loop improves performance
-		// Old angular vector of particle spawn
-		vector3 oldpvec = (
-			cos(lastpitch) * cos(lastangle),
-			cos(lastpitch) * sin(lastangle),
-			sin(-lastpitch));
-		// New angular vector of particle spawn
-		vector3 newpvec = (
-			cos(emitter.pitch) * cos(emitter.angle),
-			cos(emitter.pitch) * sin(emitter.angle),
-			sin(-emitter.pitch));
-		// Vector offset between old and new positions
-		vector3 pold = level.vec3diff(emitter.pos, lastpos);
-		// Velocity offset between old and new angular vectors
-		vector3 pvoff = level.vec3diff(oldpvec,newpvec);
-		// Max Length of Laser Beam
-		let maxLen = laserTrace.distance - laserTrace.HitDir.length();
-
-		// int pspawns = 0;
-		double incr=0.1;
-		for (double f = 0; f <= maxLen; f = f + incr) {
-			LP.Pos = emitter.pos + (oldpvec * f) + pold;
-			LP.Vel = (pvoff * f) - pold;
-			LP.Size = sizefactor * frandom[llm](0.75,1.25);
-
-			// Increase density at ends
-			incr = sin((f/laserTrace.distance)*180)*(laserTrace.distance*0.0075);
-			incr = clamp(incr, 0.1, 1000);
-			incr *= frandom[llm](0.1,2);
-
-			// Calculate simulated atmospheric density (pseudo-perlin?)
-			// https://www.desmos.com/calculator/ihnnq7pdjt
-			double alph = (
-				(sin(LP.Pos.X) + sin(LP.Pos.Y) + sin(LP.Pos.Z)) +
-				(sin(LP.Pos.X*10) + sin(LP.Pos.Y*10) + sin(LP.Pos.Z*10)) +
-				(sin(LP.Pos.X*.5) + sin(LP.Pos.Y*.1) + sin(LP.Pos.Z*.5)) +
-				sin(f+getage()));
-			alph += max(1-incr,0);
-			alph = clamp(alph, 0, 1);
-
-			// actually spawn particle
-			LP.StartAlpha = alph * LaserAlpha;
-			Level.SpawnParticle(LP);
-			// pspawns++;
-		}
-		LP.Size = 1; LP.StartAlpha = 1*LaserAlpha; Level.SpawnParticle(LP);
-		LP.Size *= 4; LP.StartAlpha = 0.25*LaserAlpha; Level.SpawnParticle(LP);
-		LP.Size *= 4; LP.StartAlpha = 0.125*LaserAlpha; Level.SpawnParticle(LP);
-		// console.printf("particles "..pspawns);
+		HDCore.emitLaserParticles(
+			emitter,
+			color: owner.bISMONSTER ? owner.bFRIENDLY ? 0x50FF00 : 0xFF0000 : LaserColor,
+			alpha: LaserAlpha
+		);
 
 		//Bounce Light
 		if (!lbounce && owner is 'HDPlayerPawn') { lbounce = UaS_LLM_BounceLight(actor.spawn("UaS_LLM_BounceLight", laserTrace.HitLocation, false)); }
