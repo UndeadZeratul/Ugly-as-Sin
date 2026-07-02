@@ -9,6 +9,16 @@ class UaS_AI_Bootstrap : HDCoreEventHandler {
 		botClasses.clear();
 		humanClasses.clear();
 		otherClasses.clear();
+
+		cmdWhitelist.push('addFlashlightBotClass');
+		cmdWhitelist.push('removeFlashlightBotClass');
+		cmdWhitelist.push('clearFlashlightBotClasses');
+		cmdWhitelist.push('addFlashlightHumanClass');
+		cmdWhitelist.push('removeFlashlightHumanClass');
+		cmdWhitelist.push('clearFlashlightHumanClasses');
+		cmdWhitelist.push('addFlashlightOtherClass');
+		cmdWhitelist.push('removeFlashlightOtherClass');
+		cmdWhitelist.push('clearFlashlightOtherClasses');
 	}
 
 	override void processCommand(HDCoreCommand cmd) {
